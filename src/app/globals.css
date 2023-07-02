@@ -1,0 +1,12 @@
+@tailwind base;
+:root {
+    --primary: #ffffff;
+    --secondary: #052487;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+@tailwind components;
+@tailwind utilities;
