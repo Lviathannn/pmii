@@ -1,12 +1,11 @@
 import Image from "next/image";
-import Button from "./Button";
 
 export default function Card() {
     return (
         <article className="mt-6 flex flex-col gap-5 rounded-xl p-5 font-poppins shadow-sm transition-all hover:shadow-md">
             <div color="blue-gray" className="">
                 <Image
-                    src="/news.jpg"
+                    src="/news.webp"
                     alt="img-blur-shadow"
                     width={500}
                     height={450}
