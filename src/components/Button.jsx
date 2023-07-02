@@ -1,14 +1,10 @@
 "use client";
-import { Button as Btn } from "@material-tailwind/react";
 
-export default function Button({
-    text,
-    icon,
-}) {
+export default function Button({ text, icon }) {
     return (
-        <Btn className="flex items-center gap-3 bg-secondary !font-poppins font-medium text-primary">
+        <button className="flex items-center justify-center gap-3 rounded-md bg-tertiary px-5 py-2 font-medium text-white transition-all hover:scale-105 hover:shadow-md ">
             {icon}
             {text}
-        </Btn>
+        </button>
     );
 }

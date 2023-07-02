@@ -20,24 +20,13 @@ export default function Home() {
                 className="absolute right-0 top-0 z-0 h-full w-full "
             />
             <div className="flex flex-col items-center justify-center gap-20 pb-10 md:gap-28 lg:mb-0">
-                <div className="flex flex-col items-center gap-5">
-                    <h1 className="text-[45px] font-bold  leading-none text-white lg:text-[70px]">
-                        Selamat Datang
-                        Di <br />
-                        <span className="text-secondary">
-                            Media
-                            Pergerakan
-                        </span>
+                <div className="flex flex-col gap-5 md:items-center">
+                    <h1 className="text-[45px] font-bold  leading-none text-white lg:text-[82px]">
+                        Selamat Datang Di <br />
+                        <span className="text-secondary">Media Pergerakan</span>
                     </h1>
-                    <h4 className="text-center text-lg text-white">
-                        Upgrade Your
-                        Knowledge and
-                        Skills with PMII
-                        <br />
-                        We are
-                        Indonesian
-                        Moslem Student
-                        Movement
+                    <h4 className="text-lg text-white">
+                        Upgrade Your Knowledge and Skills with PMII
                     </h4>
                 </div>
                 <Image

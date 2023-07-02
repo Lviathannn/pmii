@@ -13,15 +13,14 @@ module.exports = withMT({
     ],
     theme: {
         fontFamily: {
-            poppins: [
-                "var(--font-poppins)",
-            ],
+            poppins: ["var(--font-poppins)"],
         },
 
         extend: {
             colors: {
                 primary: "#052487",
                 secondary: "#f5e942",
+                tertiary: "#2196F3",
             },
         },
     },
