@@ -1,22 +1,26 @@
+import { fetcher } from "@/utils/fetcher";
 import Image from "next/image";
+import useSWR from "swr";
 
-export default function Card() {
+export default function Card({ title, author, bannerId }) {
+    const { data } = useSWR(
+        `https://cdn.contentful.com/spaces/8unu6a33e8sw/environments/master/assets/${bannerId}?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ`,
+        fetcher
+    );
     return (
-        <article className="mt-6 flex flex-col gap-5 rounded-xl p-5 font-poppins shadow-sm transition-all hover:shadow-md">
+        <article className="mt-6 flex w-full flex-col gap-5 rounded-xl p-5 font-poppins shadow-sm transition-all hover:shadow-md">
             <div color="blue-gray" className="">
                 <Image
-                    src="/news.webp"
-                    alt="img-blur-shadow"
-                    width={500}
-                    height={450}
-                    className="aspect-video rounded-lg bg-cover"
+                    src={`https:${data?.fields.file.url}`}
+                    alt={data?.fields.title}
+                    width={400}
+                    height={500}
+                    className="aspect-video h-full w-full rounded-lg bg-cover"
                 />
             </div>
             <div>
-                <p className="font-medium text-gray-600">Author</p>
-                <h5 className="mb-2 text-lg font-semibold text-gray-800">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                </h5>
+                <p className="font-medium text-gray-600">{author}</p>
+                <h5 className="mb-2 text-lg font-semibold text-gray-800">{title}</h5>
             </div>
         </article>
     );
