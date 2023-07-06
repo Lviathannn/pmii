@@ -19,14 +19,8 @@ export default function Navbar() {
     return (
         <>
             <Nav
-                className={`top fixed z-30 h-max max-w-full rounded-none border-0 px-4 py-2 transition-colors lg:px-24 lg:py-4 ${
-                    (activeSegment !== null) | isScrolled | openNav
-                        ? "!bg-primary !shadow-md"
-                        : "bg-transparent"
-                }}`}
-                color={`${
-                    (activeSegment !== null) | isScrolled | openNav ? "gray" : "transparent"
-                }`}
+                className={`top fixed z-30 h-max max-w-full rounded-none border-0 bg-primary/80 px-4 py-2 backdrop-blur-lg transition-colors delay-100 duration-300 md:delay-0 lg:px-24 lg:py-4`}
+                color={isScrolled ? "gray" : "transparent"}
             >
                 <div className="flex items-center justify-between">
                     <Typography
@@ -34,7 +28,13 @@ export default function Navbar() {
                         href="/"
                         className="mr-4 flex cursor-pointer items-center gap-4 py-1.5 !font-poppins text-xl font-semibold"
                     >
-                        <Image src={"/logopmii.png"} width={35} height={35} alt="Logo PMII" />
+                        <Image
+                            src={"/logopmii.png"}
+                            width={35}
+                            height={35}
+                            alt="Logo PMII"
+                            className="h-[35px] w-[35px]"
+                        />
                         Media Pergerakan
                     </Typography>
                     <div className="flex items-center gap-4">
@@ -83,7 +83,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 <Collapse open={openNav}>
-                    <ul className="mb-4 mt-2 flex flex-col gap-2 bg-primary lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+                    <ul className="mb-4 mt-2 flex flex-col gap-3 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
                         <NavList activeSegment={activeSegment} />
                     </ul>
                 </Collapse>

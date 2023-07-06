@@ -9,7 +9,6 @@ export default function NewsSection() {
         "https://cdn.contentful.com/spaces/8unu6a33e8sw/environments/master/entries/1a6SgPB1nywFQ9XjeJ7nR7?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ",
         fetcher
     );
-    console.log(data);
     return (
         <section className=" flex flex-col gap-10 px-8 py-20 lg:px-24">
             <div className="flex flex-col items-center justify-center leading-none">
@@ -18,19 +17,19 @@ export default function NewsSection() {
             </div>
             <div className="grid grid-cols-1 justify-items-center gap-5 md:grid-cols-2 xl:grid-cols-3">
                 <Card
-                    title={data?.fields.title}
-                    author={data?.fields.author}
-                    bannerId={data?.fields.bannerImage.sys.id}
+                    title={data?.fields?.title}
+                    author={data?.fields?.author}
+                    bannerId={data?.fields?.bannerImage.sys.id}
                 />
                 <Card
-                    title={data?.fields.title}
-                    author={data?.fields.author}
-                    bannerId={data?.fields.bannerImage.sys.id}
+                    title={data?.fields?.title}
+                    author={data?.fields?.author}
+                    bannerId={data?.fields?.bannerImage.sys.id}
                 />
                 <Card
-                    title={data?.fields.title}
-                    author={data?.fields.author}
-                    bannerId={data?.fields.bannerImage.sys.id}
+                    title={data?.fields?.title}
+                    author={data?.fields?.author}
+                    bannerId={data?.fields?.bannerImage.sys.id}
                 />
             </div>
         </section>

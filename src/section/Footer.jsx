@@ -6,18 +6,19 @@ import Image from "next/image";
 export default function Footer() {
     return (
         <footer className="w-full bg-primary p-8 lg:px-24">
-            <div className="flex md:flex-row flex-col flex-wrap items-center justify-center gap-y-6 gap-x-12 text-center md:justify-between">
-                <div className="flex gap-5 items-center">
+            <div className="flex flex-col flex-wrap items-center justify-center gap-x-12 gap-y-6 text-center md:flex-row md:justify-between">
+                <div className="flex items-center gap-5">
                     <Image
                         width={35}
                         height={35}
                         src="/logopmii.png"
                         alt="logo PMII"
+                        className="h-[35px] w-[35px]"
                     />
                     <Typography
                         as="h2"
                         color="white"
-                        className="font-semibold text-xl !font-poppins"
+                        className="!font-poppins text-xl font-semibold"
                     >
                         Media Pergerakan
                     </Typography>
@@ -27,19 +28,18 @@ export default function Footer() {
                 </ul>
             </div>
             <hr className="my-8 border-white" />
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
                 <Typography
                     color="blue-gray"
-                    className="text-center !font-poppins text-white font-normal"
+                    className="text-center !font-poppins font-normal text-white"
                 >
-                    &copy; 2023 Media
-                    Pergerakan
+                    &copy; 2023 Media Pergerakan
                 </Typography>
                 <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
                     <Typography
                         as="a"
                         href="#"
-                        className="opacity-100 transition-opacity hover:text-secondary text-white"
+                        className="text-white opacity-100 transition-opacity hover:text-secondary"
                     >
                         <svg
                             className="h-5 w-5"
@@ -57,7 +57,7 @@ export default function Footer() {
                     <Typography
                         as="a"
                         href="#"
-                        className="opacity-80 transition-opacity hover:text-secondary text-white"
+                        className="text-white opacity-80 transition-opacity hover:text-secondary"
                     >
                         <svg
                             className="h-5 w-5"
@@ -75,7 +75,7 @@ export default function Footer() {
                     <Typography
                         as="a"
                         href="#"
-                        className="opacity-80 transition-opacity hover:text-secondary text-white"
+                        className="text-white opacity-80 transition-opacity hover:text-secondary"
                     >
                         <svg
                             className="h-7 w-7"

@@ -11,8 +11,8 @@ export default function Card({ title, author, bannerId }) {
         <article className="mt-6 flex w-full flex-col gap-5 rounded-xl p-5 font-poppins shadow-sm transition-all hover:shadow-md">
             <div color="blue-gray" className="">
                 <Image
-                    src={`https:${data?.fields.file.url}`}
-                    alt={data?.fields.title}
+                    src={`https:${data?.fields?.file?.url}`}
+                    alt={"banner"}
                     width={400}
                     height={500}
                     className="aspect-video h-full w-full rounded-lg bg-cover"

@@ -14,8 +14,8 @@ export default function TeamCard({ assetsId, name, position, facebook, instagram
         <article className="mt-6 flex flex-col gap-5 rounded-xl p-5 font-poppins shadow-md transition-all">
             <div color="blue-gray" className="">
                 <Image
-                    src={`https:${data?.fields.file.url}`}
-                    alt={data?.fields.title}
+                    src={`https:${data?.fields?.file.url}`}
+                    alt={data?.fields?.title}
                     width={300}
                     height={300}
                     className="aspect-square rounded-lg bg-contain"
