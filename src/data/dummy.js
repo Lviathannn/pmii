@@ -10,6 +10,16 @@ export const navListItem = [
         active: "team",
     },
     {
+        title: "Kopri",
+        href: "/kopri",
+        active: "kopri",
+    },
+    {
+        title: "Rayon",
+        href: "/rayon",
+        active: "rayon",
+    },
+    {
         title: "Gallery",
         href: "/gallery",
         active: "gallery",
