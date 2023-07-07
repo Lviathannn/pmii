@@ -2,8 +2,11 @@
 import { navListItem } from "@/data/dummy";
 import { Typography } from "@material-tailwind/react";
 import Link from "next/link";
+import { useSelectedLayoutSegment } from "next/navigation";
 
-export default function NavList({ activeSegment }) {
+export default function NavList() {
+    const activeSegment = useSelectedLayoutSegment();
+
     return (
         <>
             {navListItem.map((item, index) => (

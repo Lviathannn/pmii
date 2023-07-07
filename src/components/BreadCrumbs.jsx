@@ -2,8 +2,9 @@
 import { Breadcrumbs as Brd } from "@material-tailwind/react";
 import Link from "next/link";
 
-export default function BreadCrumbs({ activeSegment }) {
+export default function BreadCrumbs({ activeSegment, activeSegment2 }) {
     const link = activeSegment.toLowerCase();
+    const link2 = activeSegment2?.toLowerCase();
     return (
         <Brd>
             <Link href="/" className="opacity-60">
@@ -17,11 +18,21 @@ export default function BreadCrumbs({ activeSegment }) {
                 </svg>
             </Link>
             <Link
-                href={link}
+                href={`/${link}`}
                 className="font-poppins font-medium text-gray-600 hover:text-tertiary"
             >
                 {activeSegment}
             </Link>
+            {activeSegment2 ? (
+                <Link
+                    href={`${link2}`}
+                    className="font-poppins font-medium text-gray-600 hover:text-tertiary"
+                >
+                    {activeSegment2}
+                </Link>
+            ) : (
+                ""
+            )}
         </Brd>
     );
 }

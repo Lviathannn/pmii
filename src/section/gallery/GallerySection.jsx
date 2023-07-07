@@ -1,4 +1,5 @@
 import Breadcrumbs from "@/components/BreadCrumbs";
+import ImgDialog from "@/components/ImgDialog";
 import ImageGallery from "@/components/ImgGallery";
 import { getData } from "@/utils/getData";
 
@@ -19,10 +20,9 @@ export default async function GallerySection() {
                 </div>
                 <h1 className="text-4xl font-bold text-primary">PMII Periode 2023 - 2024</h1>
             </div>
-            <div className="grid grid-cols-1 justify-items-center gap-5 lg:grid-cols-2 2xl:grid-cols-3">
+            <div className="grid grid-cols-1 place-items-center gap-5 lg:grid-cols-2 2xl:grid-cols-3">
                 {data?.items.map((item, index) => (
-                    <ImageGallery
-                        imgId={item?.fields?.image?.id}
+                    <ImgDialog
                         key={index}
                         caption={item?.fields?.caption}
                         imgLink={data?.includes?.Asset[index]?.fields?.file?.url}

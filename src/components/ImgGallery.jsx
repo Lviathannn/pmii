@@ -11,7 +11,7 @@ export default function ImageGallery({ caption, imgLink, index }) {
                 src={`https:${imgLink}`}
                 alt={caption}
                 fill
-                className="h-[270px] w-[360px] object-cover sm:h-[291px] sm:w-[388px]"
+                className="object-cover "
                 priority={index < 3 ? true : false}
             />
         </div>

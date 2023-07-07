@@ -7,7 +7,6 @@ import useScrollStatus from "@/hooks/useScrollStatus";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 export default function Navbar() {
-    const activeSegment = useSelectedLayoutSegment();
     const [openNav, setOpenNav] = useState(false);
 
     useEffect(() => {
@@ -40,7 +39,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-4">
                         <div className="mr-4 hidden lg:block">
                             <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-                                <NavList activeSegment={activeSegment} />
+                                <NavList />
                             </ul>
                         </div>
                         <IconButton
@@ -84,7 +83,7 @@ export default function Navbar() {
                 </div>
                 <Collapse open={openNav}>
                     <ul className="mb-4 mt-2 flex flex-col gap-3 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-                        <NavList activeSegment={activeSegment} />
+                        <NavList />
                     </ul>
                 </Collapse>
             </Nav>
