@@ -4,17 +4,6 @@ export const navListItem = [
         href: "/",
         active: null,
     },
-
-    {
-        title: "Rayon",
-        href: "/rayon",
-        active: "rayon",
-    },
-    {
-        title: "Kopri",
-        href: "/kopri",
-        active: "kopri",
-    },
     {
         title: "Team",
         href: "/team",
