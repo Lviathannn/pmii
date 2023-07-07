@@ -4,7 +4,8 @@ import { getData } from "@/utils/getData";
 
 export default async function TeamSection() {
     const data = await getData(
-        "https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=team"
+        "https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=team",
+        { next: { revalidate: 10 } }
     );
 
     return (

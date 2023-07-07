@@ -6,7 +6,7 @@ import { getData } from "@/utils/getData";
 export default async function BlogSection() {
     const data = await getData(
         "https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=post",
-        { next: { revalidate: 20 } }
+        { next: { revalidate: 10 } }
     );
     return (
         <section className="flex min-h-screen w-full flex-col gap-8 px-8 py-24 lg:px-24">

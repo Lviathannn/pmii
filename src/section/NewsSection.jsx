@@ -5,7 +5,7 @@ import React from "react";
 export default async function NewsSection() {
     const data = await getData(
         "https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=post",
-        { next: { revalidate: 20 } }
+        { cache: "force-cache" }
     );
 
     return (

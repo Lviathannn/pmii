@@ -6,7 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 export default async function BlogDetailSection({ slug }) {
     const data = await getData(
         `https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=post&fields.slug=${slug}`,
-        30
+        { next: { revalidate: 10 } }
     );
 
     return (
