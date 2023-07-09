@@ -1,32 +1,22 @@
-import Breadcrumbs from "@/components/BreadCrumbs";
 import ImgDialog from "@/components/ImgDialog";
-import ImageGallery from "@/components/ImgGallery";
+import PageTitle from "@/components/PageTitle";
 import { getData } from "@/utils/getData";
 
 export default async function GallerySection() {
     const data = await getData(
         "https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=gallery",
-        { next: { revalidate: 10 } }
+        { next: { revalidate: 30 } }
     );
 
     return (
         <section className="flex min-h-screen w-full flex-col gap-8 px-8 py-24 lg:px-24">
-            <div className="">
-                <Breadcrumbs activeSegment="Gallery" />
-            </div>
-            <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-5">
-                    <p className="font-medium text-gray-600">Gallery</p>
-                    <div className="h-[2px] w-32 bg-tertiary" />
-                </div>
-                <h1 className="text-4xl font-bold text-primary">PMII Periode 2023 - 2024</h1>
-            </div>
+            <PageTitle activeSegment="Gallery" />
             <div className="grid grid-cols-1 place-items-center gap-5 lg:grid-cols-2 2xl:grid-cols-3">
                 {data?.items.map((item, index) => (
                     <ImgDialog
                         key={index}
                         caption={item?.fields?.caption}
-                        imgLink={data?.includes?.Asset[index]?.fields?.file?.url}
+                        imgId={item?.fields?.image?.sys?.id}
                         index={index}
                     />
                 ))}

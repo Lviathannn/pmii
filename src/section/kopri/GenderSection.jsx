@@ -67,11 +67,15 @@ export default function GenderSection() {
                         <Button
                             text="Explore"
                             icon={<PaperAirplaneIcon className="h-5 w-5 text-white " />}
+                            target="visi"
                         />
                     </div>
                 </article>
             </div>
-            <div className="flex flex-col items-center justify-center gap-12 xl:flex-row xl:items-start xl:justify-around">
+            <div
+                className="flex flex-col items-center justify-center gap-12 xl:flex-row xl:items-start xl:justify-around"
+                id="visi"
+            >
                 <article className="flex flex-col gap-3">
                     <h3 className="mb-5 text-3xl font-bold text-primary">Visi Dan Misi PMII</h3>
 

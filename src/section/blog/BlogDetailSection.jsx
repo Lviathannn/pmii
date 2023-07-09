@@ -6,7 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 export default async function BlogDetailSection({ slug }) {
     const data = await getData(
         `https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=post&fields.slug=${slug}`,
-        { next: { revalidate: 10 } }
+        { next: { revalidate: 30 } }
     );
 
     return (
@@ -14,7 +14,7 @@ export default async function BlogDetailSection({ slug }) {
             <BreadCrumbs activeSegment="Blog" activeSegment2={slug} />
             <Image
                 src={`https:${data?.includes?.Asset[0]?.fields?.file?.url}`}
-                alt={"news"}
+                alt={data?.items[0]?.fields?.title}
                 width={1280}
                 height={720}
                 className=" h-40 w-full rounded-xl object-cover object-center sm:h-56 xl:h-96"
@@ -60,7 +60,12 @@ export default async function BlogDetailSection({ slug }) {
                             ></path>
                         </svg>
                         <p className="font-medium text-gray-600">
-                            {new Date(data?.items[0]?.fields?.date).toDateString()}
+                            {new Date(data?.items[0]?.sys?.createdAt).toLocaleString("id-ID", {
+                                weekday: "long",
+                                day: "numeric",
+                                month: "long",
+                                year: "numeric",
+                            })}
                         </p>
                     </div>
                 </div>

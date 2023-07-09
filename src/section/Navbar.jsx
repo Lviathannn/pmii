@@ -4,7 +4,6 @@ import { Navbar as Nav, Typography, IconButton, Collapse } from "@material-tailw
 import Image from "next/image";
 import NavList from "@/components/NavList";
 import useScrollStatus from "@/hooks/useScrollStatus";
-import { useSelectedLayoutSegment } from "next/navigation";
 
 export default function Navbar() {
     const [openNav, setOpenNav] = useState(false);

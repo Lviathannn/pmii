@@ -1,7 +1,8 @@
+"use client";
 import Button from "@/components/Button";
 import Image from "next/image";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
-
+import { motion } from "framer-motion";
 export default function AboutSection() {
     return (
         <section className="relative flex min-h-screen flex-col gap-20 px-8 pt-10 sm:pt-20 md:pt-40 lg:px-24 lg:pt-72">
@@ -33,20 +34,38 @@ export default function AboutSection() {
                 alt="Shape Image"
                 className="absolute right-0 top-10 -z-20"
             />
-            <div className="flex flex-col items-center justify-center leading-none">
+
+            <motion.div
+                className="flex flex-col items-center justify-center leading-none"
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+            >
                 <h2 className=" text-center text-[40px] font-bold text-primary">About Us</h2>
                 <p className="text-base  font-semibold text-secondary">Tentang PMII</p>
-            </div>
+            </motion.div>
 
             <div className="flex flex-col items-center justify-center gap-10 xl:flex-row xl:items-start xl:justify-around">
-                <Image
-                    src="/about.svg"
-                    width={400}
-                    height={400}
-                    alt="About Image"
-                    priority={true}
-                />
-                <article className="flex flex-col gap-5">
+                <motion.div
+                    initial={{ opacity: 0, x: -80 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                    className=""
+                >
+                    <Image
+                        src="/about.svg"
+                        width={400}
+                        height={400}
+                        alt="About Image"
+                        priority={true}
+                    />
+                </motion.div>
+                <motion.article
+                    className="flex flex-col gap-5"
+                    initial={{ opacity: 0, x: 80 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                >
                     <h3 className="mb-5 text-3xl font-bold text-primary">
                         Pergerakan Mahasiswa Islam Indonesia
                     </h3>
@@ -66,13 +85,22 @@ export default function AboutSection() {
                     <div className="">
                         <Button
                             text="Explore"
+                            target="visi"
                             icon={<PaperAirplaneIcon className="h-5 w-5 text-white " />}
                         />
                     </div>
-                </article>
+                </motion.article>
             </div>
-            <div className="flex flex-col items-center justify-center gap-12 xl:flex-row xl:items-start xl:justify-around">
-                <article className="flex flex-col gap-5">
+            <div
+                className="flex flex-col items-center justify-center gap-12 xl:flex-row xl:items-start xl:justify-around"
+                id="visi"
+            >
+                <motion.article
+                    className="flex flex-col gap-5"
+                    initial={{ opacity: 0, y: -80 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                >
                     <h3 className="mb-5 text-3xl font-bold text-primary">Visi Dan Misi PMII</h3>
 
                     <div className="flex items-start gap-7">
@@ -83,6 +111,7 @@ export default function AboutSection() {
                             className="h-8 w-8"
                             alt="Visi Image"
                         />
+
                         <div className="flex flex-col gap-2">
                             <h3 className="text-2xl font-semibold text-primary">Misi</h3>
                             <p className="max-w-3xl text-gray-600">
@@ -108,14 +137,21 @@ export default function AboutSection() {
                             </p>
                         </div>
                     </div>
-                </article>
-                <Image
-                    src="/about2.svg"
-                    width={400}
-                    height={400}
-                    alt="About Image"
-                    priority={true}
-                />
+                </motion.article>
+                <motion.div
+                    className=""
+                    initial={{ opacity: 0, y: 80 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                >
+                    <Image
+                        src="/about2.svg"
+                        width={400}
+                        height={400}
+                        alt="About Image"
+                        priority={true}
+                    />
+                </motion.div>
             </div>
         </section>
     );

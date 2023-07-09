@@ -4,8 +4,8 @@ import React from "react";
 
 export default async function NewsSection() {
     const data = await getData(
-        "https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=post",
-        { cache: "force-cache" }
+        "https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=post&order=-sys.createdAt",
+        { next: { revalidate: 30 } }
     );
 
     return (
@@ -22,7 +22,7 @@ export default async function NewsSection() {
                                 title={item?.fields?.title}
                                 slug={item?.fields?.slug}
                                 author={item?.fields?.author}
-                                imgLink={data?.includes?.Asset[index]?.fields?.file?.url}
+                                imgId={item?.fields?.coverImage.sys.id}
                                 key={index}
                             />
                         );
