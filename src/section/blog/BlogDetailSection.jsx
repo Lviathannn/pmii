@@ -11,13 +11,16 @@ export default async function BlogDetailSection({ slug }) {
 
     return (
         <section className="flex min-h-screen w-full flex-col gap-8 px-8 py-24 lg:px-24">
-            <BreadCrumbs activeSegment="Blog" activeSegment2={slug} />
+            <BreadCrumbs
+                activeSegment="Blog"
+                activeSegment2={{ title: data?.items[0]?.fields?.shortTitle, slug: slug }}
+            />
             <Image
                 src={`https:${data?.includes?.Asset[0]?.fields?.file?.url}`}
                 alt={data?.items[0]?.fields?.title}
                 width={1280}
                 height={720}
-                className=" h-40 w-full rounded-xl object-cover object-center sm:h-56 xl:h-96"
+                className=" h-60 w-full rounded-xl object-cover object-center sm:h-72 xl:h-[420px]"
                 priority={true}
             />
             <div className="flex flex-col gap-3">
@@ -60,7 +63,7 @@ export default async function BlogDetailSection({ slug }) {
                             ></path>
                         </svg>
                         <p className="font-medium text-gray-600">
-                            {new Date(data?.items[0]?.sys?.createdAt).toLocaleString("id-ID", {
+                            {new Date(data?.items[0]?.fields?.date).toLocaleString("id-ID", {
                                 weekday: "long",
                                 day: "numeric",
                                 month: "long",
@@ -70,7 +73,9 @@ export default async function BlogDetailSection({ slug }) {
                     </div>
                 </div>
             </div>
-            <div className="">{documentToReactComponents(data?.items[0]?.fields?.content)}</div>
+            <div className="blog-detail">
+                {documentToReactComponents(data?.items[0]?.fields?.content)}
+            </div>
         </section>
     );
 }

@@ -5,7 +5,7 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 export default function AboutSection() {
     return (
-        <section className="relative flex min-h-screen flex-col gap-20 px-8 pt-10 sm:pt-20 md:pt-40 lg:px-24 lg:pt-72">
+        <section className="relative flex min-h-screen flex-col gap-20 px-8 pt-10 md:pt-32 lg:px-24 lg:pt-96">
             <Image
                 src="/shape3.svg"
                 width={250}

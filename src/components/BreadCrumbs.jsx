@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export default function BreadCrumbs({ activeSegment, activeSegment2 }) {
     const link = activeSegment.toLowerCase();
-    const link2 = activeSegment2?.toLowerCase();
     return (
         <Brd>
             <Link href="/" className="opacity-60">
@@ -23,12 +22,12 @@ export default function BreadCrumbs({ activeSegment, activeSegment2 }) {
             >
                 {activeSegment}
             </Link>
-            {activeSegment2 ? (
+            {activeSegment2?.title ? (
                 <Link
-                    href={`${link2}`}
+                    href={`${activeSegment2.slug}`}
                     className="font-poppins font-medium text-gray-600 hover:text-tertiary"
                 >
-                    {activeSegment2}
+                    {activeSegment2.title}
                 </Link>
             ) : (
                 ""

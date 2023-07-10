@@ -8,17 +8,24 @@
     display: none;
 }
 
-h1{
+.blog-detail p {
+    margin-bottom: 1.5rem;
+}
+
+h1 {
     font-size: 32px;
     font-weight: 700;
 }
 
-h2,h3,h4{
+h2,
+h3,
+h4 {
     font-size: 28px;
     font-weight: 600;
 }
 
-h5,h6{
+h5,
+h6 {
     font-size: 24px;
     font-weight: 500;
 }

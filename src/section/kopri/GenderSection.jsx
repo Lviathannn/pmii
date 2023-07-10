@@ -1,6 +1,8 @@
+"use client";
 import Button from "@/components/Button";
 import Image from "next/image";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 export default function GenderSection() {
     return (
@@ -33,20 +35,37 @@ export default function GenderSection() {
                 alt="Shape Image"
                 className="absolute right-0 top-10 -z-20"
             />
-            <div className="flex flex-col items-center justify-center leading-none">
+            <motion.div
+                className="flex flex-col items-center justify-center leading-none"
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+            >
                 <h2 className=" text-center text-[40px] font-bold text-primary">About Us</h2>
                 <p className="text-base  font-semibold text-secondary">Tentang KOPRI</p>
-            </div>
+            </motion.div>
 
             <div className="flex flex-col items-center justify-center gap-10 xl:flex-row xl:items-start xl:justify-around">
-                <Image
-                    src="/about2.svg"
-                    width={400}
-                    height={400}
-                    alt="About Image"
-                    priority={true}
-                />
-                <article className="flex flex-col gap-3">
+                <motion.div
+                    className=""
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                >
+                    <Image
+                        src="/about2.svg"
+                        width={400}
+                        height={400}
+                        alt="About Image"
+                        priority={false}
+                    />
+                </motion.div>
+                <motion.article
+                    className="flex flex-col gap-3"
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                >
                     <h3 className="mb-5 text-3xl font-bold text-primary">
                         Korps Pergerakan Mahasiswa Islam Indonesia Putri
                     </h3>
@@ -70,7 +89,7 @@ export default function GenderSection() {
                             target="visi"
                         />
                     </div>
-                </article>
+                </motion.article>
             </div>
             <div
                 className="flex flex-col items-center justify-center gap-12 xl:flex-row xl:items-start xl:justify-around"
@@ -79,7 +98,12 @@ export default function GenderSection() {
                 <article className="flex flex-col gap-3">
                     <h3 className="mb-5 text-3xl font-bold text-primary">Visi Dan Misi PMII</h3>
 
-                    <div className="flex items-start gap-7">
+                    <motion.div
+                        className="flex items-start gap-7"
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                    >
                         <Image
                             src="/target.png"
                             width={60}
@@ -94,8 +118,13 @@ export default function GenderSection() {
                                 menghadapi gelombang transformasi digital.
                             </p>
                         </div>
-                    </div>
-                    <div className="flex items-start gap-5">
+                    </motion.div>
+                    <motion.div
+                        className="flex items-start gap-5"
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1, delay: 1 }}
+                    >
                         <Image
                             src="/eye.png"
                             width={60}
@@ -114,15 +143,22 @@ export default function GenderSection() {
                                 peran dan peningkatan kualitas sumber daya anggota yang profesional
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                 </article>
-                <Image
-                    src="/about3.svg"
-                    width={400}
-                    height={400}
-                    alt="About Image"
-                    priority={true}
-                />
+                <motion.div
+                    className=""
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 1.5 }}
+                >
+                    <Image
+                        src="/about3.svg"
+                        width={400}
+                        height={400}
+                        alt="About Image"
+                        priority={true}
+                    />
+                </motion.div>
             </div>
         </section>
     );

@@ -1,18 +1,26 @@
-import { getData } from "@/utils/getData";
+"use client";
+import { fetcher } from "@/utils/fetcher";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import useSWR from "swr";
 
-export default async function TeamCard({ imgId, name, position, facebook, instagram, linkedin }) {
-    const imgData = await getData(
+export default function TeamCard({ imgId, name, position, facebook, instagram, linkedin }) {
+    const imgData = useSWR(
         `https://cdn.contentful.com/spaces/8unu6a33e8sw/environments/master/assets/${imgId}?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ`,
-        { next: { revalidate: 30 } }
+        fetcher
     );
     return (
-        <article className="mt-6 flex flex-col gap-5 rounded-xl p-5 font-poppins shadow-md transition-all">
+        <motion.article
+            className="mt-6 flex flex-col gap-5 rounded-xl p-5 font-poppins shadow-md transition-all"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+        >
             <div color="blue-gray" className="">
                 <Image
-                    src={`https:${imgData?.fields?.file?.url}`}
-                    alt={imgData?.fields?.title}
+                    src={`https:${imgData?.data?.fields?.file?.url}`}
+                    alt={name}
                     priority={false}
                     width={300}
                     height={300}
@@ -61,6 +69,6 @@ export default async function TeamCard({ imgId, name, position, facebook, instag
                     />
                 </Link>
             </div>
-        </article>
+        </motion.article>
     );
 }
