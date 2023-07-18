@@ -24,7 +24,7 @@ export default function TeamCard({ imgId, name, position, facebook, instagram, l
                     priority={false}
                     width={300}
                     height={300}
-                    className="aspect-square h-full w-full rounded-lg"
+                    className="aspect-square h-full w-full rounded-lg bg-cover object-center"
                 />
             </div>
             <div>
