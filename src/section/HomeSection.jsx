@@ -1,14 +1,14 @@
 "use client";
-import HomeTitle from "@/components/Hometitle";
+
 import Image from "next/image";
 export default function Home() {
     return (
         <section className="w-full bg-primary px-8 pt-24 md:max-h-screen lg:px-24">
             <div className="flex flex-col items-center justify-center gap-20 pb-10 md:gap-28 lg:mb-0">
-                <HomeTitle
+                {/* <HomeTitle
                     title={"Media Pergerakan PMII Komisariat Darussalam Ciamis"}
                     subtitle={"Upgrade Your Knowledge and Skills with PMII"}
-                />
+                /> */}
 
                 <Image
                     src="/banner.svg"
