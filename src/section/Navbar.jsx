@@ -3,22 +3,24 @@ import { useEffect, useState } from "react";
 import { Navbar as Nav, Typography, IconButton, Collapse } from "@material-tailwind/react";
 import Image from "next/image";
 import NavList from "@/components/NavList";
-import useScrollStatus from "@/hooks/useScrollStatus";
 
 export default function Navbar() {
     const [openNav, setOpenNav] = useState(false);
-
     useEffect(() => {
         window.addEventListener("resize", () => window.innerWidth >= 960 && setOpenNav(false));
+        return () => {
+            window.removeEventListener(
+                "resize",
+                () => window.innerWidth >= 960 && setOpenNav(false)
+            );
+        };
     }, []);
-
-    const isScrolled = useScrollStatus();
 
     return (
         <>
             <Nav
                 className={`top fixed z-30 h-max max-w-full rounded-none border-0 bg-primary/80 px-4 py-2 backdrop-blur-lg transition-colors delay-100 duration-300 md:delay-0 lg:px-24 lg:py-4`}
-                color={isScrolled ? "gray" : "transparent"}
+                color={"transparent"}
             >
                 <div className="flex items-center justify-between">
                     <Typography

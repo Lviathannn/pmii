@@ -1,4 +1,3 @@
-import Breadcrumbs from "@/components/BreadCrumbs";
 import PageTitle from "@/components/PageTitle";
 import TeamCard from "@/components/TeamCard";
 import { getData } from "@/utils/getData";

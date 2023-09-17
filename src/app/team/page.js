@@ -1,5 +1,10 @@
 import TeamSection from "@/section/team/TeamSection";
 
+export const metadata = {
+    title: "Anggota PMII",
+    description: "Anggota PMII Periode 2023 - 2024",
+};
+
 export default function Team() {
     return (
         <>
