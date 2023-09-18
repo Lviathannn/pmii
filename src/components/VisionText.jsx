@@ -5,14 +5,21 @@ import React from "react";
 
 export default function VisionText({ title, mission, vission }) {
     return (
-        <motion.article
-            className="flex flex-col gap-5"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-        >
-            <h3 className="mb-5 text-3xl font-bold text-primary">{title}</h3>
-            <div className="flex items-start gap-7">
+        <motion.article className="flex flex-col gap-5">
+            <motion.h3
+                className="mb-5 text-3xl font-bold text-primary"
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.3 }}
+            >
+                {title}
+            </motion.h3>
+            <motion.div
+                className="flex items-start gap-7"
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.3, delay: 0.8 }}
+            >
                 <Image
                     src="/target.png"
                     width={60}
@@ -25,8 +32,13 @@ export default function VisionText({ title, mission, vission }) {
                     <h3 className="text-2xl font-semibold text-primary">Misi</h3>
                     <p className="max-w-3xl text-gray-600">{mission}</p>
                 </div>
-            </div>
-            <div className="flex items-start gap-5">
+            </motion.div>
+            <motion.div
+                className="flex items-start gap-5"
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.3, delay: 1.5 }}
+            >
                 <Image
                     src="/eye.png"
                     width={60}
@@ -38,7 +50,7 @@ export default function VisionText({ title, mission, vission }) {
                     <h3 className="text-2xl font-semibold text-primary">Visi</h3>
                     <p className="max-w-3xl text-gray-600">{vission}</p>
                 </div>
-            </div>
+            </motion.div>
         </motion.article>
     );
 }

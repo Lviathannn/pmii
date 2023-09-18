@@ -4,7 +4,7 @@ import { getData } from "@/utils/getData";
 
 export default async function BlogSection() {
     const data = await getData(
-        "https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=post&order=-fields.date",
+        `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/entries?access_token=${process.env.ACCESS_TOKEN}&content_type=post&order=-fields.date`,
         { next: { revalidate: 30 } }
     );
 

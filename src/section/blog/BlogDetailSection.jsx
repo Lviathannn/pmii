@@ -5,12 +5,12 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 export default async function BlogDetailSection({ slug }) {
     const data = await getData(
-        `https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=post&fields.slug=${slug}`,
+        `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/entries?access_token=${process.env.ACCESS_TOKEN}&content_type=post&fields.slug=${slug}`,
         { next: { revalidate: 30 } }
     );
 
     return (
-        <section className="flex min-h-screen w-full flex-col gap-8 px-8 py-24 lg:px-24">
+        <section className="flex min-h-screen w-full flex-col gap-8 px-5 py-24 lg:px-24">
             <BreadCrumbs
                 activeSegment="Blog"
                 activeSegment2={{ title: data?.items[0]?.fields?.shortTitle, slug: slug }}
@@ -20,12 +20,14 @@ export default async function BlogDetailSection({ slug }) {
                 alt={data?.items[0]?.fields?.title}
                 width={1280}
                 height={720}
-                className=" h-60 w-full rounded-xl object-cover object-center sm:h-72 xl:h-[420px]"
+                className=" h-60 w-full rounded-xl object-cover object-center sm:h-72 xl:h-[500px]"
                 priority={true}
             />
-            <div className="flex flex-col gap-3">
-                <h1 className="text-4xl font-bold text-primary">{data?.items[0]?.fields?.title}</h1>
-                <div className="flex gap-5">
+            <div className="flex flex-col">
+                <h1 className="text-2xl font-bold text-primary md:text-4xl">
+                    {data?.items[0]?.fields?.title}
+                </h1>
+                <div className="mt-2 flex flex-col gap-2 lg:flex-row lg:gap-5">
                     <div className="flex items-center gap-2">
                         <svg
                             fill="none"

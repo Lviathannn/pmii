@@ -3,12 +3,13 @@ import { getData } from "@/utils/getData";
 
 export async function generateMetadata({ params }) {
     const data = await getData(
-        `https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=post&fields.slug=${params.slug}`,
+        `https://cdn.contentful.com/spaces/${process.env.SPACE_id}/entries?access_token=${process.env.ACCESS_TOKEN}&content_type=post&fields.slug=${params.slug}`,
         { next: { revalidate: 30 } }
     );
-    console.log(data.includes.Asset[0].fields.file.url);
+
     return {
         title: data.items[0].fields.title,
+        description: data.items[0].fields.title,
         openGraph: {
             images: ["https:" + data.includes.Asset[0].fields.file.url],
         },
