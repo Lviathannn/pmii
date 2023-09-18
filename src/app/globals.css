@@ -12,22 +12,37 @@
     margin-bottom: 1.5rem;
 }
 
-h1 {
-    font-size: 32px;
+.blog-detail h1 {
+    font-size: 30px;
     font-weight: 700;
+    margin-bottom: 1.5rem;
 }
 
-h2,
-h3,
-h4 {
+.blog-detail h2 {
     font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.blog-detail h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.blog-detail h4 {
+    font-size: 22px;
     font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
-h5,
-h6 {
-    font-size: 24px;
+.blog-detail h5 {
+    font-size: 20px;
     font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+.blog-detail h6 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
 }
 
 @tailwind components;

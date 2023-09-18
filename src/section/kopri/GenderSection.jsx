@@ -1,8 +1,6 @@
-"use client";
-import Button from "@/components/Button";
 import Image from "next/image";
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
+import AboutText from "@/components/AboutText";
+import VisionText from "@/components/VisionText";
 
 export default function GenderSection() {
     return (
@@ -35,40 +33,20 @@ export default function GenderSection() {
                 alt="Shape Image"
                 className="absolute right-0 top-10 -z-20"
             />
-            <motion.div
-                className="flex flex-col items-center justify-center leading-none"
-                initial={{ opacity: 0, y: -50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-            >
+            <div className="flex flex-col items-center justify-center leading-none">
                 <h2 className=" text-center text-[40px] font-bold text-primary">About Us</h2>
                 <p className="text-base  font-semibold text-secondary">Tentang KOPRI</p>
-            </motion.div>
+            </div>
 
             <div className="flex flex-col items-center justify-center gap-10 xl:flex-row xl:items-start xl:justify-around">
-                <motion.div
-                    className=""
-                    initial={{ opacity: 0, x: -100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <Image
-                        src="/about2.svg"
-                        width={400}
-                        height={400}
-                        alt="About Image"
-                        priority={false}
-                    />
-                </motion.div>
-                <motion.article
-                    className="flex flex-col gap-3"
-                    initial={{ opacity: 0, x: 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <h3 className="mb-5 text-3xl font-bold text-primary">
-                        Korps Pergerakan Mahasiswa Islam Indonesia Putri
-                    </h3>
+                <Image
+                    src="/about2.svg"
+                    width={400}
+                    height={400}
+                    alt="About Image"
+                    priority={false}
+                />
+                <AboutText title={"Korps Pergerakan Mahasiswa Islam Indonesia Putri"}>
                     <p className="max-w-3xl text-base  leading-relaxed text-gray-600">
                         Korps Pergerakan Mahasiswa Islam Indonesia Putri (KOPRI) merupakan lembaga
                         perempuan yang berada dalam tubuh PMII. Kopri menjadi bagian aset
@@ -76,89 +54,37 @@ export default function GenderSection() {
                         koordinasi dengan Cabang yang fokus pada persoalan perempuan di PMII dan
                         isu-isu perempuan secara umum
                     </p>
-                    <h3 className="mb-5 text-3xl font-bold text-primary">Gender</h3>
+                    <span className="my-5 inline-block text-3xl font-bold text-primary">
+                        Gender
+                    </span>
                     <p className="max-w-3xl text-base  leading-relaxed text-gray-600">
                         Gender adalah perbedaan peran, fungsi dan tanggung jawab antara laki-laki
                         dan perempuan yang merupakan hasil kontruksi sosial dan dapat berubah sesuai
                         perkembangan zaman
                     </p>
-                    <div className="">
-                        <Button
-                            text="Explore"
-                            icon={<PaperAirplaneIcon className="h-5 w-5 text-white " />}
-                            target="visi"
-                        />
-                    </div>
-                </motion.article>
+                </AboutText>
             </div>
             <div
                 className="flex flex-col items-center justify-center gap-12 xl:flex-row xl:items-start xl:justify-around"
                 id="visi"
             >
-                <article className="flex flex-col gap-3">
-                    <h3 className="mb-5 text-3xl font-bold text-primary">Visi Dan Misi PMII</h3>
+                <VisionText
+                    title={"Visi Dan Misi KOPRI"}
+                    mission={
+                        " Terciptanya Kopri PMII yang cerdas, aktif dan bermatabat dalam menghadapi gelombang transformasi digital"
+                    }
+                    vission={
+                        " Mengkonsolidasikan seluruh aktifits anggota kader dibidang intelektual dan teknologi informasi. Mendukung kegiatan yang mendorong sikap humanis dan anti intoleran, Menstimulir proses ketahanan anggota dan kader dengan integritas komunal bukan individu,Memperbaiki citra Kopri PMII Cabang Ciputat melalui pelaksanaan, peran dan peningkatan kualitas sumber daya anggota yang profesional"
+                    }
+                />
 
-                    <motion.div
-                        className="flex items-start gap-7"
-                        initial={{ opacity: 0, x: -100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                    >
-                        <Image
-                            src="/target.png"
-                            width={60}
-                            height={50}
-                            className="h-8 w-8"
-                            alt="Visi Image"
-                        />
-                        <div className="flex flex-col gap-2">
-                            <h3 className="text-2xl font-semibold text-primary">Misi</h3>
-                            <p className="max-w-3xl text-gray-600">
-                                Terciptanya Kopri PMII yang cerdas, aktif dan bermatabat dalam
-                                menghadapi gelombang transformasi digital.
-                            </p>
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        className="flex items-start gap-5"
-                        initial={{ opacity: 0, x: -100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, delay: 1 }}
-                    >
-                        <Image
-                            src="/eye.png"
-                            width={60}
-                            height={50}
-                            className="h-10 w-10"
-                            alt="Visi Image"
-                        />
-                        <div className="flex flex-col gap-2">
-                            <h3 className="text-2xl font-semibold text-primary">Visi</h3>
-                            <p className="max-w-3xl text-gray-600">
-                                Mengkonsolidasikan seluruh aktifits anggota kader dibidang
-                                intelektual dan teknologi informasi. Mendukung kegiatan yang
-                                mendorong sikap humanis dan anti intoleran, Menstimulir proses
-                                ketahanan anggota dan kader dengan integritas komunal bukan individu
-                                ,Memperbaiki citra Kopri PMII Cabang Ciputat melalui pelaksanaan,
-                                peran dan peningkatan kualitas sumber daya anggota yang profesional
-                            </p>
-                        </div>
-                    </motion.div>
-                </article>
-                <motion.div
-                    className=""
-                    initial={{ opacity: 0, y: 100 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 1.5 }}
-                >
-                    <Image
-                        src="/about3.svg"
-                        width={400}
-                        height={400}
-                        alt="About Image"
-                        priority={true}
-                    />
-                </motion.div>
+                <Image
+                    src="/about3.svg"
+                    width={400}
+                    height={400}
+                    alt="About Image"
+                    priority={true}
+                />
             </div>
         </section>
     );

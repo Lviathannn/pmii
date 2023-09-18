@@ -4,8 +4,7 @@ import React from "react";
 
 export default async function NewsSection() {
     const data = await getData(
-        "https://cdn.contentful.com/spaces/8unu6a33e8sw/entries?access_token=moeWKcoJw5flx43XWBL1WebDZYsujWSzumlqcmaCXNQ&content_type=post&order=-sys.createdAt",
-        { next: { revalidate: 30 } }
+        `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/entries?access_token=${process.env.ACCESS_TOKEN}&content_type=post&order=-sys.createdAt`
     );
 
     return (
@@ -22,7 +21,7 @@ export default async function NewsSection() {
                                 title={item?.fields?.title}
                                 slug={item?.fields?.slug}
                                 author={item?.fields?.author}
-                                imgId={item?.fields?.coverImage.sys.id}
+                                imgId={item?.fields?.coverImage?.sys?.id}
                                 key={index}
                             />
                         );
