@@ -3,8 +3,7 @@ import { getData } from "@/utils/getData";
 
 export async function generateMetadata({ params }) {
     const data = await getData(
-        `https://cdn.contentful.com/spaces/${process.env.SPACE_id}/entries?access_token=${process.env.ACCESS_TOKEN}&content_type=post&fields.slug=${params.slug}`,
-        { next: { revalidate: 30 } }
+        `https://cdn.contentful.com/spaces/${process.env.SPACE_id}/entries?access_token=${process.env.ACCESS_TOKEN}&content_type=post&fields.slug=${params.slug}`
     );
 
     return {
