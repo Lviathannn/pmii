@@ -8,6 +8,7 @@ export async function generateMetadata({ params }) {
     );
     return {
         title: data.items[0].fields.title,
+        description: data.items[0].fields.title,
         openGraph: {
             images: ["https:" + data.includes.Asset[0].fields.file.url],
         },
